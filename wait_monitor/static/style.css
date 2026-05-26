@@ -1,0 +1,273 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #f4f7fb;
+  color: #14213d;
+}
+
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem 1.25rem;
+  background: #14213d;
+  color: #fff;
+}
+
+.topbar h1 {
+  margin: 0 0 0.25rem;
+  font-size: 1.5rem;
+}
+
+.topbar p {
+  margin: 0;
+  opacity: 0.85;
+}
+
+.refresh-button {
+  border: 0;
+  border-radius: 999px;
+  padding: 0.8rem 1.1rem;
+  background: #fca311;
+  color: #14213d;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+main {
+  padding: 1rem;
+}
+
+.status-banner {
+  margin-bottom: 1rem;
+  padding: 0.8rem 1rem;
+  border-radius: 0.75rem;
+  background: #e9eef8;
+}
+
+.airport-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1rem;
+}
+
+.airport-card {
+  background: #fff;
+  border-radius: 1rem;
+  padding: 1rem;
+  box-shadow: 0 10px 30px rgba(20, 33, 61, 0.08);
+}
+
+.airport-card-header {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  align-items: flex-start;
+  margin-bottom: 0.75rem;
+}
+
+.airport-code {
+  margin: 0;
+  font-size: 1.35rem;
+}
+
+.airport-name {
+  margin: 0.25rem 0 0;
+  color: #52607a;
+  font-size: 0.95rem;
+}
+
+.updated-pill {
+  background: #edf2ff;
+  color: #274690;
+  border-radius: 999px;
+  padding: 0.35rem 0.7rem;
+  font-size: 0.85rem;
+  white-space: nowrap;
+}
+
+.entries {
+  display: grid;
+  gap: 0.75rem;
+}
+
+.entry {
+  border: 1px solid #dde4f0;
+  border-radius: 0.85rem;
+  background: #fbfcfe;
+}
+
+.entry summary {
+  list-style: none;
+  cursor: pointer;
+  padding: 0.8rem;
+}
+
+.entry summary::-webkit-details-marker {
+  display: none;
+}
+
+.entry-main {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  align-items: center;
+}
+
+.entry-service {
+  font-weight: 700;
+}
+
+.entry-checkpoint,
+.entry-updated {
+  color: #60708b;
+  font-size: 0.9rem;
+}
+
+.freshness-green {
+  color: #1c7c36;
+}
+
+.freshness-yellow {
+  color: #8a6100;
+}
+
+.freshness-red {
+  color: #b42318;
+}
+
+.updated-pill.freshness-green {
+  background: #e8f7ed;
+  color: #1c7c36;
+}
+
+.updated-pill.freshness-yellow {
+  background: #fff3d6;
+  color: #8a6100;
+}
+
+.updated-pill.freshness-red {
+  background: #fde8e7;
+  color: #b42318;
+}
+
+.entry-updated.freshness-green,
+.entry-updated.freshness-yellow,
+.entry-updated.freshness-red {
+  font-weight: 700;
+}
+
+.entry-avg-block {
+  text-align: right;
+}
+
+.entry-avg-label {
+  color: #60708b;
+  font-size: 0.8rem;
+}
+
+.entry-avg-value {
+  font-size: 1.6rem;
+  font-weight: 800;
+}
+
+.entry-details {
+  border-top: 1px solid #dde4f0;
+  padding: 0.8rem;
+  display: grid;
+  gap: 0.75rem;
+}
+
+.entry-nested {
+  margin-top: 0.75rem;
+  background: #ffffff;
+}
+
+.child-group {
+  border: 1px solid #dde4f0;
+  border-radius: 0.75rem;
+  background: #f7f9fd;
+}
+
+.child-group summary {
+  cursor: pointer;
+  padding: 0.7rem 0.85rem;
+  font-weight: 700;
+  color: #30415f;
+}
+
+.child-entry-list {
+  padding: 0 0.75rem 0.75rem;
+}
+
+.metrics {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.5rem;
+}
+
+.metric {
+  background: #fff;
+  border-radius: 0.75rem;
+  padding: 0.6rem;
+  border: 1px solid #e3e8f1;
+}
+
+.metric-label {
+  font-size: 0.75rem;
+  color: #60708b;
+}
+
+.metric-value {
+  margin-top: 0.15rem;
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+
+.previous {
+  font-size: 0.95rem;
+  color: #30415f;
+}
+
+.delta-up {
+  color: #c1121f;
+}
+
+.delta-down {
+  color: #2b9348;
+}
+
+.delta-same {
+  color: #5c677d;
+}
+
+.warning-list {
+  margin: 0.6rem 0 0;
+  padding-left: 1rem;
+  color: #8a4f00;
+}
+
+@media (max-width: 720px) {
+  .topbar {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .refresh-button {
+    width: 100%;
+  }
+
+  .entry-main {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .entry-avg-block {
+    text-align: left;
+  }
+}
