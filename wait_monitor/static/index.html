@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Airport Wait Monitor</title>
+    <link rel="stylesheet" href="/styles.css">
+  </head>
+  <body>
+    <header class="topbar">
+      <div>
+        <h1>Airport Wait Monitor</h1>
+        <p>Live current and previous wait snapshots for BWI, IAD, DCA, and BOS.</p>
+      </div>
+      <button id="refreshButton" class="refresh-button">Refresh</button>
+    </header>
+
+    <main>
+      <div id="statusBanner" class="status-banner">Loading airport data...</div>
+      <section id="airportGrid" class="airport-grid"></section>
+    </main>
+
+    <template id="airportCardTemplate">
+      <article class="airport-card">
+        <div class="airport-card-header">
+          <div>
+            <h2 class="airport-code"></h2>
+            <p class="airport-name"></p>
+          </div>
+          <div class="updated-pill"></div>
+        </div>
+        <div class="entries"></div>
+      </article>
+    </template>
+
+    <template id="entryTemplate">
+      <details class="entry">
+        <summary>
+          <div class="entry-main">
+            <div>
+              <div class="entry-service"></div>
+              <div class="entry-checkpoint"></div>
+            </div>
+            <div class="entry-avg-block">
+              <div class="entry-avg-label">Average</div>
+              <div class="entry-avg-value"></div>
+              <div class="entry-updated"></div>
+            </div>
+          </div>
+        </summary>
+        <div class="entry-details">
+          <div class="metrics"></div>
+          <div class="previous"></div>
+        </div>
+      </details>
+    </template>
+
+    <script src="/app.js"></script>
+  </body>
+  </html>
